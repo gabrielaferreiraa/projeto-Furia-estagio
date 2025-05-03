@@ -1,0 +1,78 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background: #111;
+    color: #eee;
+  }
+  
+  header {
+    background: #0d0d0d;
+    padding: 20px;
+    text-align: center;
+    border-bottom: 2px solid #ffcc00;
+  }
+  
+  main {
+    padding: 20px;
+  }
+  
+  section {
+    margin-bottom: 30px;
+  }
+  
+  #messages {
+    background: #222;
+    padding: 10px;
+    height: 200px;
+    overflow-y: scroll;
+    margin-bottom: 10px;
+  }
+  
+  input[type="text"] {
+    padding: 10px;
+    width: 70%;
+  }
+  
+  button {
+    padding: 10px 15px;
+    background: #ffcc00;
+    border: none;
+    cursor: pointer;
+    color: #000;
+    font-weight: bold;
+  }
+  
+  .disabled {
+    cursor: not-allowed !important;
+  }
+
+  ::placeholder {
+    color: #ffffff !important; /* Branco puro */
+    opacity: 1; /* Opcional: deixa o branco 100% visível */
+  }
+
+  /* Para compatibilidade com alguns navegadores antigos: */
+  :-ms-input-placeholder {
+    color: #ffffff !important;
+  }
+  ::-ms-input-placeholder {
+    color: #ffffff !important;
+  }
+  
+  /*Modal */
+  .modal-content {
+    border: 1px solid #ffcc00;
+  }
+  
+  #nameModal .modal-header {
+    border-bottom: 1px solid #ffcc00;
+  }
+  
+  #nameModal .modal-footer {
+    border-top: 1px solid #ffcc00;
+  }
+  
+  #nameModal .btn-close {
+    filter: invert(1);
+  }
