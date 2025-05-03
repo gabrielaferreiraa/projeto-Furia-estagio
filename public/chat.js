@@ -33,9 +33,11 @@ setInterval(() => {
   document.getElementById('game-status').innerText = gameState;
 }, 5000);
 
+
+
 // Função para o modal de cadastro
 function registerFromModal() {
-  const nameInput = document.getElementById('modalUserName'); // ID correto?
+  const nameInput = document.getElementById('modalUserName'); 
   const userName = nameInput.value.trim();
   
   if (userName === '') {
@@ -47,11 +49,14 @@ function registerFromModal() {
   cadastrarNome(); // Chama a função original de cadastro
 }
 
-// Inicialização do modal (adicione no final do arquivo)
+// Inicialização do modal
 document.addEventListener('DOMContentLoaded', () => {
   const nameModal = new bootstrap.Modal(document.getElementById('nameModal'));
   nameModal.show();
 });
+
+
+
 
  const messagesDiv = document.getElementById('messages');
 
@@ -70,6 +75,10 @@ document.addEventListener('DOMContentLoaded', () => {
    messagesDiv.appendChild(message);
    messagesDiv.scrollTop = messagesDiv.scrollHeight;
  }
+
+
+
+
 
 // Simular live status (pode depois integrar com API)
 setInterval(() => {
