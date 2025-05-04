@@ -1,78 +1,337 @@
+/* Estilos Base */
 body {
-    font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 0;
-    background: #111;
-    color: #eee;
+  font-family: 'Roboto', Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  color: #eee;
+  background-color: #111;
+  line-height: 1.6;
+}
+
+/* Cabeçalho */
+header {
+  position: relative;
+  overflow: hidden;
+  background: #0d0d0d;
+  padding: 20px;
+  text-align: center;
+  border-bottom: 2px solid #ffcc00;
+}
+
+header::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(rgba(13, 13, 13, 0.7), rgba(13, 13, 13, 0.7)), 
+              url('/Imagens/team.png') no-repeat center center;
+  background-size: cover;
+  z-index: 0;
+
+}
+
+.logo-container,
+.titulo,
+header p {
+  position: relative;
+  z-index: 2;
+}
+
+.z-index-1 {
+  position: relative;
+  z-index: 1;
+}
+
+.titulo {
+  color: #ffcc00;
+}
+
+.logo-container {
+  position: relative;
+  z-index: 2;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: "Roboto", sans-serif;
+  margin-top: 0;
+}
+
+.logo {
+  height: 80px;
+  width: auto;
+  max-width: 100%;
+  transition: all 0.3s ease;
+}
+
+.logo:hover {
+  opacity: 0.9;
+  transform: scale(1.02);
+}
+
+/* Layout Principal */
+main {
+  padding: 20px;
+}
+
+section {
+  margin-bottom: 30px;
+}
+
+.container {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+/* Chat */
+#messages {
+  background: #222;
+  padding: 15px;
+  height: 300px;
+  overflow-y: auto;
+  margin-bottom: 15px;
+  border-radius: 8px;
+  border: 1px solid #333;
+}
+
+#messages::-webkit-scrollbar {
+  width: 8px;
+}
+
+#messages::-webkit-scrollbar-thumb {
+  background-color: #ffcc00;
+  border-radius: 4px;
+}
+
+#messages::-webkit-scrollbar-track {
+  background-color: #333;
+}
+
+/* Formulários e Inputs */
+input[type="text"] {
+  padding: 12px;
+  width: 100%;
+  background-color: #333;
+  border: 1px solid #444;
+  color: #fff;
+  border-radius: 4px;
+  transition: border 0.3s ease;
+}
+
+input[type="text"]:focus {
+  outline: none;
+  border-color: #ffcc00;
+}
+
+button {
+  padding: 12px 20px;
+  background: #ffcc00;
+  border: none;
+  cursor: pointer;
+  color: #000;
+  font-weight: bold;
+  border-radius: 4px;
+  transition: all 0.3s ease;
+  text-transform: uppercase;
+  font-size: 0.9rem;
+}
+
+button:hover {
+  background: #ffd633;
+  transform: translateY(-2px);
+}
+
+button:disabled {
+  background: #666;
+  cursor: not-allowed;
+  transform: none;
+}
+
+/* Status do Jogo */
+.box-status {
+  background-color: rgba(0, 0, 0, 0.5) !important;
+  border: 1px solid #ffcc00;
+  border-radius: 8px;
+}
+
+#game-status {
+  font-weight: bold;
+  color: #ffffff;
+  font-size: 1.2rem;
+}
+
+.text-muted {
+  color: #ffffff !important; /* Alterado para branco */
+  opacity: 0.8;
+  font-size: 0.85rem;
+}
+
+/* Modal */
+.modal-content {
+  border: 1px solid #ffcc00;
+  background-color: #1a1a1a;
+}
+
+#nameModal .modal-header {
+  border-bottom: 1px solid #ffcc00;
+}
+
+#nameModal .modal-footer {
+  border-top: 1px solid #ffcc00;
+}
+
+#nameModal .btn-close {
+  filter: invert(1);
+}
+
+/* Placeholders */
+::placeholder {
+  color: #ccc !important;
+  opacity: 1;
+}
+
+:-ms-input-placeholder {
+  color: #ccc !important;
+}
+
+::-ms-input-placeholder {
+  color: #ccc !important;
+}
+
+/* Mensagens do Chat */
+.message {
+  padding: 10px 15px;
+  margin-bottom: 10px;
+  border-radius: 6px;
+  word-wrap: break-word;
+  animation: fadeIn 0.3s ease;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(5px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.message-bot {
+  background-color: rgba(255, 204, 0, 0.15);
+  border-left: 4px solid #ffcc00;
+}
+
+.message-user {
+  background-color: rgba(0, 123, 255, 0.15);
+  border-left: 4px solid #007bff;
+}
+
+.message-system {
+  background-color: rgba(40, 167, 69, 0.15);
+  border-left: 4px solid #28a745;
+  font-style: italic;
+}
+
+.bot-name {
+  color: #ffcc00;
+  font-weight: bold;
+}
+
+.user-name {
+  color: #007bff;
+  font-weight: bold;
+}
+
+/* Notificações */
+.notification {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  padding: 15px 25px;
+  background-color: #333;
+  color: white;
+  border-radius: 6px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+  z-index: 1000;
+  transition: all 0.3s ease;
+  animation: slideIn 0.3s ease;
+}
+
+@keyframes slideIn {
+  from { transform: translateX(100%); opacity: 0; }
+  to { transform: translateX(0); opacity: 1; }
+}
+
+.notification-info {
+  border-left: 5px solid #17a2b8;
+}
+
+.notification-error {
+  border-left: 5px solid #dc3545;
+}
+
+.notification-success {
+  border-left: 5px solid #28a745;
+}
+
+.fade-out {
+  opacity: 0;
+  transform: translateY(20px);
+}
+
+/* Background do Chat */
+#chat {
+  background: linear-gradient(rgba(0, 0, 0, 0.85), rgba(0, 0, 0, 0.85)),
+              url('/Imagens/furia.png') no-repeat center center fixed;
+  background-size: cover;
+  min-height: 100vh;
+}
+
+/* Classes de Estado */
+.disabled {
+  cursor: not-allowed !important;
+  opacity: 0.7;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+  #messages {
+    height: 250px;
+    padding: 10px;
+  }
+  
+  .notification {
+    width: 90%;
+    left: 5%;
+    right: auto;
+    bottom: 10px;
   }
   
   header {
-    background: #0d0d0d;
-    padding: 20px;
-    text-align: center;
-    border-bottom: 2px solid #ffcc00;
+    padding: 15px;
   }
   
-  main {
-    padding: 20px;
-  }
-  
-  section {
-    margin-bottom: 30px;
-  }
-  
-  #messages {
-    background: #222;
-    padding: 10px;
-    height: 200px;
-    overflow-y: scroll;
-    margin-bottom: 10px;
-  }
-  
-  input[type="text"] {
-    padding: 10px;
-    width: 70%;
+  .logo {
+    height: 60px;
   }
   
   button {
     padding: 10px 15px;
-    background: #ffcc00;
-    border: none;
-    cursor: pointer;
-    color: #000;
-    font-weight: bold;
+    font-size: 0.8rem;
   }
-  
-  .disabled {
-    cursor: not-allowed !important;
-  }
+}
 
-  ::placeholder {
-    color: #ffffff !important; /* Branco puro */
-    opacity: 1; /* Opcional: deixa o branco 100% visível */
+@media (max-width: 480px) {
+  #messages {
+    height: 200px;
   }
+  
+  input[type="text"] {
+    padding: 10px;
+  }
+}
 
-  /* Para compatibilidade com alguns navegadores antigos: */
-  :-ms-input-placeholder {
-    color: #ffffff !important;
+@media (max-width: 768px) {
+  header {
+    min-height: 250px;
+    padding-top: 30px;
+    padding-bottom: 30px;
   }
-  ::-ms-input-placeholder {
-    color: #ffffff !important;
-  }
-  
-  /*Modal */
-  .modal-content {
-    border: 1px solid #ffcc00;
-  }
-  
-  #nameModal .modal-header {
-    border-bottom: 1px solid #ffcc00;
-  }
-  
-  #nameModal .modal-footer {
-    border-top: 1px solid #ffcc00;
-  }
-  
-  #nameModal .btn-close {
-    filter: invert(1);
-  }
+}
